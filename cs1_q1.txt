@@ -1,0 +1,15 @@
+Case Study 1
+Clinic X has 1 doctor. The doctor’s average consultation time is 3 minutes per patient. Currently, there
+are 5 patients in the queue and the doctor is not seeing any patient. John decides to queue online and
+he becomes the 6th patient in the queue, having 5 patients ahead of him. Since there are 5 patients
+ahead and each taking 3 minutes on average, the waiting time for John is estimated to be 15 minutes.
+
+Question 1:
+When should the countdown in waiting time, i.e. from 15 minutes, start for John? The moment he
+queues online, or when the doctor starts seeing the first patient in the queue?
+
+Answer:
+The countdown in waiting time for John should start when the doctor begins seeing the first patient in the queue.
+The waiting time is calculated based on the average consultation time per patient, and it starts counting once the doctor starts
+attending to patients. In this scenario, since there are 5 patients ahead of John, the waiting time of 15 minutes would commence
+when the doctor begins seeing the first patient in the queue.

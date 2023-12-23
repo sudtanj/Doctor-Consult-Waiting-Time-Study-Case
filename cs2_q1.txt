@@ -1,0 +1,12 @@
+Case Study 2
+Clinic Y has 2 doctors, Doctor A and Doctor B. The average consultation times per patient are 3
+minutes for Doctor A and 4 minutes for Doctor B. Currently, there are 14 patients in the queue and
+both doctors are not seeing any patient. John decides to queue online and he becomes the 15th
+patient in the queue, with 14 patients ahead of him.
+
+Question 1:
+Assuming that all the patients in the queue, including John, have no specific preferences for the
+doctors they want to consult, what will John’s estimated waiting time be when he joins the queue?
+
+Answer:
+approximately 49 minutes
