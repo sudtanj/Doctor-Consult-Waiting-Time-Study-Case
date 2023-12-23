@@ -1,13 +1,29 @@
 
-export class Doctor {
+export class DoctorFactory {
+    private static inst: DoctorFactory | null = null
+
+    static getInstance() {
+        if (this.inst == null) {
+            this.inst = new DoctorFactory()
+        }
+        return this.inst
+    }
+
+    private constructor() {
+    }
+
+    getDoctorWithNormalDistribution(serviceTimes: number[]) {
+        return serviceTimes.map(v => new Doctor(v, (1 / serviceTimes.length)))
+    }
+}
+
+class Doctor {
     // doctor avg serving time
     serviceTime: number
     // the weight is calculated based on the preferences of the people likely to choose this doctor
-    // default to 0.5 if no preferences from patient
-    // possible value = 0 - 1
     preferencesRatio: number
 
-    constructor(serviceTime: number, preferencesRatio = 0.5) {
+    constructor(serviceTime: number, preferencesRatio: number) {
         this.serviceTime = serviceTime;
         this.preferencesRatio = preferencesRatio;
     }

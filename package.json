@@ -2,7 +2,7 @@
   "name": "DoctorPriorityQueue",
   "version": "1.0.0",
   "scripts": {
-    "compile": "tsc",
+    "transpile": "tsc",
     "test": "ts-mocha \"./**/*_test.ts\""
   },
   "devDependencies": {

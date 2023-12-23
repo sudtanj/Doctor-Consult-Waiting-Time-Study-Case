@@ -1,9 +1,24 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.solve = exports.Doctor = void 0;
+exports.solve = exports.DoctorFactory = void 0;
+var DoctorFactory = /** @class */ (function () {
+    function DoctorFactory() {
+    }
+    DoctorFactory.getInstance = function () {
+        if (this.inst == null) {
+            this.inst = new DoctorFactory();
+        }
+        return this.inst;
+    };
+    DoctorFactory.prototype.getDoctorWithNormalDistribution = function (serviceTimes) {
+        return serviceTimes.map(function (v) { return new Doctor(v, (1 / serviceTimes.length)); });
+    };
+    DoctorFactory.inst = null;
+    return DoctorFactory;
+}());
+exports.DoctorFactory = DoctorFactory;
 var Doctor = /** @class */ (function () {
     function Doctor(serviceTime, preferencesRatio) {
-        if (preferencesRatio === void 0) { preferencesRatio = 0.5; }
         this.serviceTime = serviceTime;
         this.preferencesRatio = preferencesRatio;
     }
@@ -12,7 +27,6 @@ var Doctor = /** @class */ (function () {
     };
     return Doctor;
 }());
-exports.Doctor = Doctor;
 function solve(doctorsInfo, positionInQueue) {
     var totalDoctorAvgConsultTime = doctorsInfo.reduce(function (p, v) { return v.getAvgConsultTime() + p; }, 0);
     return positionInQueue * totalDoctorAvgConsultTime;

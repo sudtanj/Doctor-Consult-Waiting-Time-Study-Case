@@ -5,7 +5,9 @@
         "sourceMap": true
     },
     "exclude": [
-    "node_modules"
+        "node_modules",
+        "*_test.ts",
+        "*.js",
     ],
     "types": ["jest", "node"]
 }
